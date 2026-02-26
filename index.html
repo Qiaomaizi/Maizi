@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>中韩翻译气泡聊天</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <h1>中韩翻译聊天</h1>
+        <p>对方消息自动翻译为中文；我方中文自动翻译为韩语。</p>
+      </header>
+
+      <section id="chat" class="chat" aria-live="polite"></section>
+
+      <form id="messageForm" class="controls">
+        <div class="controls__row">
+          <label for="sender">消息来源</label>
+          <select id="sender" name="sender">
+            <option value="other">对方发来（任意语言 → 中文）</option>
+            <option value="me">我发送（中文 → 韩语）</option>
+          </select>
+        </div>
+
+        <div class="controls__row">
+          <label for="messageInput">输入消息</label>
+          <textarea id="messageInput" name="message" rows="3" placeholder="请输入内容..." required></textarea>
+        </div>
+
+        <div class="controls__actions">
+          <button type="submit">发送并翻译</button>
+          <button type="button" id="clearBtn" class="secondary">清空对话</button>
+        </div>
+      </form>
+    </main>
+
+    <template id="bubbleTemplate">
+      <article class="bubble">
+        <div class="bubble__meta"></div>
+        <p class="bubble__original"></p>
+        <p class="bubble__translated"></p>
+      </article>
+    </template>
+
+    <script src="script.js" type="module"></script>
+  </body>
+</html>

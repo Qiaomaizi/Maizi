@@ -1,0 +1,149 @@
+:root {
+  color-scheme: light;
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --ink: #17212f;
+  --muted: #6b7380;
+  --mine: #3077ff;
+  --others: #e8ebf2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.app {
+  width: min(840px, 95vw);
+  margin: 28px auto;
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: 0 16px 45px rgba(31, 49, 83, 0.12);
+  overflow: hidden;
+}
+
+.app__header {
+  padding: 20px 22px;
+  border-bottom: 1px solid #edf0f6;
+}
+
+.app__header h1 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.app__header p {
+  margin: 8px 0 0;
+  color: var(--muted);
+}
+
+.chat {
+  height: 56vh;
+  min-height: 380px;
+  padding: 14px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: linear-gradient(180deg, #f8f9fd, #f1f4fa);
+}
+
+.bubble {
+  max-width: 78%;
+  border-radius: 14px;
+  padding: 12px 14px;
+}
+
+.bubble--mine {
+  align-self: flex-end;
+  background: var(--mine);
+  color: #fff;
+  border-bottom-right-radius: 6px;
+}
+
+.bubble--other {
+  align-self: flex-start;
+  background: var(--others);
+  border-bottom-left-radius: 6px;
+}
+
+.bubble__meta {
+  font-size: 0.72rem;
+  opacity: 0.88;
+  margin-bottom: 8px;
+}
+
+.bubble__original,
+.bubble__translated {
+  margin: 0;
+  line-height: 1.45;
+  word-break: break-word;
+}
+
+.bubble__translated {
+  margin-top: 8px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.4);
+  padding-top: 8px;
+}
+
+.bubble--other .bubble__translated {
+  border-top-color: #ced5e2;
+}
+
+.controls {
+  border-top: 1px solid #edf0f6;
+  padding: 14px;
+  display: grid;
+  gap: 10px;
+}
+
+.controls__row {
+  display: grid;
+  gap: 6px;
+}
+
+label {
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+textarea,
+select {
+  width: 100%;
+  border: 1px solid #d3daea;
+  border-radius: 10px;
+  padding: 9px 10px;
+  background: #fff;
+}
+
+.controls__actions {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-weight: 600;
+  background: var(--mine);
+  color: #fff;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: #dbe2f2;
+  color: #304263;
+}
